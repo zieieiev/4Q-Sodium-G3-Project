@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <div>
+		<h1 id='result'>Welcome, user.</h1>
+		<div>
 			<form>
-				<label for="username">Username: </label>
+				<label for="username">Enter username: </label>
 				<!-- Make sure the type attribute is set to text -->
-				<input type="text" id="username" name="username" placeholder="zeeev">
+				<input type="text" id="username" name="username" placeholder="User">
+				<button type="button" onclick="enterName()">Submit</button>
 			</form>
         </div>
+		<script>
+			function enterName(){
+				let nameOfUser = document.getElementById('username').value;
+				document.getElementById('result').innerHTML = 'Welcome, ' + nameOfUser + '.';
+			}
+		</script>
     </body>
 </html>
