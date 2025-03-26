@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
     <body>
-		<h1 id='result'>Welcome, user.</h1>
-		<div>
-			<form>
-				<label for="username">Enter username: </label>
-				<input type="text" id="username" name="username" placeholder="User">
-				<button type="button" onclick="enterName()">Submit</button>
-				<br>
-				<a href="index2.html">
-					<button type="button">Press To Play</button>
-				</a>
-			</form>
+	<h1 id='result'>Welcome, user.</h1>
+	<div>
+		<form>
+			<label for="username">Enter username: </label>
+			<input type="text" id="username" name="username" placeholder="User">
+			<button type="button" onclick="enterName()">Submit</button>
+			<br>
+			<a href="index2.html">
+				<button type="button">Press To Play</button>
+			</a>
+		</form>
         </div>
-		<script>
-			function enterName(){
-				let nameOfUser = document.getElementById('username').value;
-				document.getElementById('result').innerHTML = 'Welcome, ' + nameOfUser + '.';
-			}
-		</script>
+	<script>
+		function enterName(){
+			let nameOfUser = document.getElementById('username').value;
+			document.getElementById('result').innerHTML = 'Welcome, ' + nameOfUser + '.';
+		}
+	</script>
     </body>
 </html>
