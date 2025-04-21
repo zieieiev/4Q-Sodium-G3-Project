@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OUT OF HUE</title>
+		<link rel="stylesheet" href="about.css">
+	</head>
+	
+  <body>
+		<div class="background-animate"></div>
+		<div class="foreground-animate"></div>
+		<div class="content">
+			<header class="website-header">
+				<div class="logo">
+					<img src="https://i.pinimg.com/736x/70/7c/27/707c278da1756b310de565940cf0012a.jpg">
+					<span id="game-name">OUT OF HUE</span> 
+				</div>
+				<nav>
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#">Game</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<main>
+				<section id="about-contents">
+					<div id="instructions">
+						<div class="boxText">
+							<h2>INSTRUCTIONS:</h2>
+							<p>Depending on the difficulty, players (in this case, you!) need to find the odd-colored square in a grid of squares of the same color to earn a point!<p>
+							<p>Select one of the three dificulties (if unlocked) to start.</p>
+						</div>
+						<div class="difficulty-buttons">
+							<div class="difficulty-option">
+								<button onclick="switchPreview('easy')">
+									<img src="difficulties/easy.jpg">
+								</button>
+							</div>
+							<div class="difficulty-option">
+								<button onclick="switchPreview('medium')">
+									<img src="difficulties/medium.jpg">
+								</button>
+							</div>
+							<div class="difficulty-option">
+								<button onclick="switchPreview('hard')">
+									<img src="difficulties/hard.jpg">
+								</button>
+							</div>
+						</div>
+						<img src="preview-images/4grid.jpg" id="preview" width="200px">
+					</div>
+					
+					<div id="scoring-system">
+						<div class="boxText">
+							<h2>SCORING SYSTEM:</h2>
+							<p>Each round will give a point if you manage to find the odd-colored square.<p>
+							<span>But there's a catch!</span>
+							<p>As the difficulty increases, score multipliers will also increase!</p>
+						</div>
+						<div class="difficulty-buttons">
+							<div class="difficulty-option">
+								<button onclick="switchPoints('easy')">
+									<img src="difficulties/easy.jpg">
+								</button>
+							</div>
+							<div class="difficulty-option">
+								<button onclick="switchPoints('medium')">
+									<img src="difficulties/medium.jpg">
+								</button>
+							</div>
+							<div class="difficulty-option">
+								<button onclick="switchPoints('hard')">
+									<img src="difficulties/hard.jpg">
+								</button>
+							</div>
+						</div>
+						<h1 id="result">1.0× POINTS!</h1>
+					</div>
+					
+					<div id="others">
+						<div class="boxText">
+							<h2>LEVEL-UP</h2>
+							<p style="font-size: 18px">If you manage to finish all the rounds of a certain difficulty, you can manage to move one difficulty up.<p>
+							<br>
+							<h2>LIVES</h2>
+							<p style="font-size: 18px">Unfortunately for you, there will only be one life. If you get one wrong, you have to start over from THAT DIFFICULTY only!<p>
+						</div>
+					</div>
+					
+				</section>
+			</main>
+			
+			<footer>
+			  <p>Copyright &copy; Group 3: OUT OF HUE</p>
+			</footer>
+		</div>
+		
+		<script>
+			function switchPreview(difficulty){
+				let element = document.getElementById('preview');
+				switch (difficulty){
+					case 'easy':
+						if (element != null){
+							element.src = 'preview-images/4grid.jpg';
+						}
+						break;
+					case 'medium':
+						if (element != null){
+							element.src = 'preview-images/9grid.jpg';
+						}
+						break;
+					case 'hard':
+						if (element != null){
+							element.src = 'preview-images/16grid.jpg';
+						}
+						break;
+				}
+			}
+			
+			function switchPoints(difficulty){
+				let element = document.getElementById('result');
+				switch (difficulty){
+					case 'easy':
+						if (element != null){
+							element.innerHTML = '1.0× POINTS!';
+						}
+						break;
+					case 'medium':
+						if (element != null){
+							element.innerHTML = '1.5× POINTS!';
+						}
+						break;
+					case 'hard':
+						if (element != null){
+							element.innerHTML = '2.0× POINTS!';
+						}
+						break;
+				}
+			}
+
+		</script>
+  </body>
+</html>
