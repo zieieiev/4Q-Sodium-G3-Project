@@ -114,49 +114,6 @@ main {
   overflow: hidden;
 }
 
-#about-contents{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-#instructions, #scoring-system{
-  position: relative;
-  display: flex;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  align-items: center;
-  width: 750px;
-  margin: 0 auto;
-}
-
-.boxText{
-  flex: 1;
-  padding-right: 20px;
-}
-
-.difficulty-buttons{
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-  align-items: flex-start;
-  gap: 2px;
-  justify-content: center;
-}
-
-.difficulty-option{
-  display: flex;
-  align-items: center;
-}
-
-.difficulty-option img{
-  width: 40px;
-}
-
 .chat-content {
   position: relative;
   top: 30px;
@@ -169,6 +126,41 @@ main {
 .chat-content p {
   margin-top: 3px;
   font-size: 15px;
+}
+
+a > button[type="button"] {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+a > button[type="button"]:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+a > button[type="button"]:hover {
+    background-color: #993399;
+}
+
+a > button[type="button"]:disabled {
+  background-color: #808080;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
 }
 
 form {
@@ -290,39 +282,3 @@ footer {
     opacity: 1;
   }
 }
-a > button[type="button"] {
-    background-color: #8a2be2;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-}
-
-a > button[type="button"]:after {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-left: 20px solid white;
-    border-bottom: 10px solid transparent;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-
-a > button[type="button"]:hover {
-    background-color: #993399;
-}
-
-a > button[type="button"]:disabled {
-  background-color: #808080;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: not-allowed;
-}
-
-
