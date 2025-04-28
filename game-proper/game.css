@@ -19,7 +19,7 @@ body {
   position: fixed;
   top: 25px;
   left: 50%;
-  width: 40%;
+  width: 50%;
   background-color: white;
   padding: 20px;
   display: flex;
@@ -45,6 +45,11 @@ body {
   width: auto;
   margin-right: 10px;
   border-radius: 5px;
+}
+
+.profile img {
+  height: 50px;
+  width: auto;
 }
 
 #game-name {
@@ -84,11 +89,62 @@ main {
   min-height: calc(100vh - 80px);
 }
 
-#difficulty {
-  background-color: white;
+#contents {
+  display: flex;
+  gap: 60px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#difficulty li
+#difficulty ul {
+  list-style-type: none;
+}
+
+#difficulty ul li {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 250px;
+  margin-bottom: 50px;
+}
+
+#difficulty ul li a {
+  color: #8a2be2;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+}
+
+#difficulty ul li p {
+  font-family: "Monaco", monospace;
+  font-size: 20px;
+  font-style: italic;
+  color: grey;
+  margin-left: 10px;
+}
+
+#difficulty ul li:nth-child(1) a:hover {
+  color: green;
+}
+
+#difficulty ul li:nth-child(2) a:hover {
+  color: orange;
+}
+
+#difficulty ul li:nth-child(3) a:hover {
+  color: red;
+}
+
+#leaderboard {
+  min-width: 420px;
+  min-height: 330px;
+  background-color: white;
+  transform: translateY(-15px);
+  border-radius: 10px;
+}
 
 label {
   display: block;
