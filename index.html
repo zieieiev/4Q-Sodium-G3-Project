@@ -2,7 +2,12 @@
 <html>
 	<head>
 		<title>OUT OF HUE</title>
+		
+		<meta name="groupNumber" content="GROUP 3">
+		<meta name="description" content="Color-Guessing Game">
+		
 		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
 	</head>
 	
     <body>
@@ -17,22 +22,25 @@
 				<nav>
 					<ul>
 						<li><a href="#">Home</a></li>
-						<li><a href="#">Game</a></li>
+						<li><a href="game-proper/game.html">Game</a></li>
 						<li><a href="about-page/index2.html">About</a></li>
 					</ul>
 				</nav>
+				<div class="profile">
+					<img src="profile.png">
+					<span id="player-name"></span>
+				</div>
 			</header>
 
 			<main>
 				<img src="landing-page/displayVid.gif" alt="Sneak peek of the game." width="300px" height="300px" id="showcase">
 				<div id="divA">
 					<h1 id="result">Welcome, user.</h1>
-					<form>
+					<form onsubmit="return enterName()">
 						<label for="username" id="subtext">Enter username: </label>
 						<input type="text" id="username" name="username" placeholder="User">
-						<button type="button" onclick="enterName()">Submit</button>
 						<br>
-						<a href="index2.html">
+						<a href="game-proper/game.html">
 							<button id="playButton" type="button" disabled></button>
 						</a>
 					</form>
@@ -55,42 +63,5 @@
 			  <p>Copyright &copy; Group 3: OUT OF HUE</p>
 			</footer>
 		</div>
-		
-		<script>
-		
-			window.onload = function() {
-				let storedUsername = localStorage.getItem('username');
-				if (storedUsername) {
-					document.getElementById('result').innerHTML = 'Welcome, ' + storedUsername + '.';
-					document.getElementById('username').value = storedUsername;
-					document.getElementById('playButton').disabled = false;
-				}
-			}
-			
-			function enterName(){
-				let nameOfUser = document.getElementById('username').value;
-				let startButton = document.getElementById('playButton');
-				
-				if (nameOfUser === ""){
-					document.getElementById('result').innerHTML = 'Please enter a username!';
-					startButton.disabled = true;
-				} else{
-					if (!isValidUsername(nameOfUser)){
-						document.getElementById('result').innerHTML = 'Invalid username!';
-						document.getElementById('subtext').innerHTML = 'Username should ONLY contain letters and/or numbers.';
-						startButton.disabled = true;
-					} else {
-						document.getElementById('result').innerHTML = 'Welcome, ' + nameOfUser + '.';
-						document.getElementById('subtext').innerHTML = 'Enter username: ';
-						startButton.disabled = false;
-						localStorage.setItem('username', nameOfUser);
-					}
-				}    
-			}
-			
-			function isValidUsername(username){
-				return /^[a-zA-Z0-9]+$/.test(username);
-			}
-		</script>
     </body>
 </html>
