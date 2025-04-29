@@ -47,6 +47,16 @@ body {
   border-radius: 5px;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile span {
+  color: #bf77f6;
+  text-decoration: underline;
+}
+
 .profile img {
   height: 50px;
   width: auto;
