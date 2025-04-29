@@ -52,6 +52,11 @@ body {
   align-items: center;
 }
 
+.profile span {
+  color: #bf77f6;
+  text-decoration: underline;
+}
+
 .profile img {
   height: 50px;
   width: auto;
