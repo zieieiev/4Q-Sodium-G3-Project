@@ -1,7 +1,7 @@
-var usernameNumber = parseInt(localStorage.getItem('usernameNumber') || '0');
+var usernameNumber = parseInt(localStorage.getItem('usernameNumber') || '1');
 
 window.onload = function loadData() {
-	let storedUsername = localStorage.getItem('username' + (usernameNumber-1));
+	let storedUsername = localStorage.getItem('username' + (usernameNumber));
 	if (storedUsername) {
 		let greeting = document.getElementById('greeting');
 		let usernameInput = document.getElementById('username');
@@ -40,7 +40,7 @@ function enterName(){
 			document.getElementById('subtext').innerHTML = 'Enter username: ';
 			startButton.disabled = false;
 			localStorage.setItem('username' + usernameNumber, nameOfUser);
-			localStorage.setItem('usernameNumber', usernameNumber + 1);
+			localStorage.setItem('usernameNumber', usernameNumber);
 			usernameNumber++;
 			
 			const playerNameElement = document.getElementById('player-name');
