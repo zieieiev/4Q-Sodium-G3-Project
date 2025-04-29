@@ -1,5 +1,7 @@
-window.onload = function() {
-	let storedUsername = localStorage.getItem('username');
+var usernameNumber = parseInt(localStorage.getItem('usernameNumber') || '0');
+
+window.onload = function loadData() {
+	let storedUsername = localStorage.getItem('username' + (usernameNumber-1));
 	if (storedUsername) {
 		let greeting = document.getElementById('greeting');
 		let usernameInput = document.getElementById('username');
@@ -20,7 +22,7 @@ window.onload = function() {
 		}
 	}
 }
-			
+
 function enterName(){
 	let nameOfUser = document.getElementById('username').value;
 	let startButton = document.getElementById('playButton');
@@ -37,7 +39,9 @@ function enterName(){
 			document.getElementById('greeting').innerHTML = 'Welcome, ' + nameOfUser + '.';
 			document.getElementById('subtext').innerHTML = 'Enter username: ';
 			startButton.disabled = false;
-			localStorage.setItem('username', nameOfUser);
+			localStorage.setItem('username' + usernameNumber, nameOfUser);
+			localStorage.setItem('usernameNumber', usernameNumber + 1);
+			usernameNumber++;
 			
 			const playerNameElement = document.getElementById('player-name');
 			if (playerNameElement) {
@@ -50,4 +54,4 @@ function enterName(){
 
 function isValidUsername(username){
 	return /^[a-zA-Z0-9]+$/.test(username);
-}
+} 
