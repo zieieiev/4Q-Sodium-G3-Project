@@ -1,10 +1,23 @@
 window.onload = function() {
 	let storedUsername = localStorage.getItem('username');
 	if (storedUsername) {
-		document.getElementById('result').innerHTML = 'Welcome, ' + storedUsername + '.';
-		document.getElementById('username').value = storedUsername;
-		document.getElementById('playButton').disabled = false;
-		document.getElementById('player-name').innerHTML = storedUsername;
+		let greeting = document.getElementById('greeting');
+		let usernameInput = document.getElementById('username');
+		let playButton = document.getElementById('playButton');
+		let playerName = document.getElementById('player-name');
+
+		if (greeting) {
+			greeting.innerHTML = 'Welcome, ' + storedUsername + '.';
+		}
+		if (usernameInput) {
+			usernameInput.value = storedUsername;
+		}
+		if (playButton) {
+			playButton.disabled = false;
+		}
+		if (playerName) {
+			playerName.innerHTML = storedUsername;
+		}
 	}
 }
 			
@@ -13,15 +26,15 @@ function enterName(){
 	let startButton = document.getElementById('playButton');
 	
 	if (nameOfUser === ""){
-		document.getElementById('result').innerHTML = 'Please enter a username!';
+		document.getElementById('greeting').innerHTML = 'Please enter a username!';
 		startButton.disabled = true;
 	} else{
 		if (!isValidUsername(nameOfUser)){
-			document.getElementById('result').innerHTML = 'Invalid username!';
+			document.getElementById('greeting').innerHTML = 'Invalid username!';
 			document.getElementById('subtext').innerHTML = 'Username should ONLY contain letters and/or numbers.';
 			startButton.disabled = true;
 		} else {
-			document.getElementById('result').innerHTML = 'Welcome, ' + nameOfUser + '.';
+			document.getElementById('greeting').innerHTML = 'Welcome, ' + nameOfUser + '.';
 			document.getElementById('subtext').innerHTML = 'Enter username: ';
 			startButton.disabled = false;
 			localStorage.setItem('username', nameOfUser);
