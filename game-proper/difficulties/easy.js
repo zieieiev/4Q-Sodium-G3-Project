@@ -78,4 +78,4 @@ window.onload = function() {
     }
 
     createGame();
-};
+}
