@@ -156,11 +156,10 @@ main {
   border-radius: 10px;
 }
 
-#leaderboard h1 h2 {
+#leaderboard h1 {
   color: #8a2be2;
   font-size: 30px;
   text-decoration: none;
-
 }
 
 label {
