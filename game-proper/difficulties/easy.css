@@ -62,9 +62,14 @@ body {
   width: auto;
 }
 
+main < div {
+  background-color: white;
+}
+
 h1 {
   margin-bottom: 10px;
 }
+
 #score {
   font-size: 1.2em;
   margin-bottom: 20px;
@@ -123,6 +128,12 @@ main {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
+}
+
+main > div {
+  background-color: white;
+  padding: 20px 50px 40px 50px;
+  border-radius: 10px;
 }
 
 button {
@@ -204,4 +215,5 @@ footer {
     opacity: 1;
   }
 }
+
 
