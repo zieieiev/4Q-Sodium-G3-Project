@@ -54,7 +54,8 @@ window.onload = function() {
                 if (i === differentIndex) {
                     score++;
                 } else {
-                    localStorage.setItem(currentUsername, score);
+                    localStorage.setItem('currentUsername', currentUsername);
+					localStorage.setItem('currentScore', score);
                     let highScore = parseInt(localStorage.getItem('highScore') || '0');
                     let highScoreUser = localStorage.getItem('highScoreUser') || '';
 
