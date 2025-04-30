@@ -1,4 +1,4 @@
-var usernameNumber = parseInt(localStorage.getItem('usernameNumber') || '0');
+var usernameNumber = parseInt(localStorage.getItem('amountOfUsernames') || '0');
 
 window.onload = function loadData() {
 	let storedUsername = localStorage.getItem('username' + (usernameNumber - 1));
@@ -40,13 +40,9 @@ function enterName(){
 			document.getElementById('subtext').innerHTML = 'Enter username: ';
 			startButton.disabled = false;
 			localStorage.setItem('username' + usernameNumber, nameOfUser);
-			localStorage.setItem('usernameNumber', usernameNumber + 1);
-			usernameNumber++;
 			
-			const playerNameElement = document.getElementById('player-name');
-			if (playerNameElement) {
-				playerNameElement.innerHTML = nameOfUser;
-			}
+			usernameNumber++;
+			localStorage.setItem('amountOfUsernames', usernameNumber);
 		}
 	} 
 	return false;				
