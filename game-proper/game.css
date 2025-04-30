@@ -156,10 +156,9 @@ main {
   border-radius: 10px;
 }
 
-#leaderboard h1 {
+#leaderboard * {
+  transform: translateX(30px) translateY(20px);
   color: #8a2be2;
-  font-size: 30px;
-  text-decoration: none;
 }
 
 label {
