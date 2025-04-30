@@ -47,7 +47,7 @@
 						<h2>EASY: <span id="scoreEasy">0</span></h2>
 						<h2>MEDIUM: <span id="scoreMedium">0</span></h2>
 						<h2>HARD: <span id="scoreHard">0</span></h2>
-						<h1>Latest Player:</h1>
+						<h1>Latest Player:<span id="latestUser"></span></h2></h1>
 					</div>
 				</div>
 			</main>
@@ -55,10 +55,15 @@
 			<script>
 			  const highScore = localStorage.getItem("highScore");
 			  const highScoreUsername = localStorage.getItem("highScoreUser");
+			  const latestScore = localStorage.getItem("currentUsername");
+			  const latestScoreUsername = localStorage.getItem("currentScore");
 
 			  const highScoreSpan = document.getElementById("scoreEasy");
+			  const currentPlayerSpan = document.getElementById("latestUser");
+			  
 			  if (highScore && highScoreUsername) {
 				highScoreSpan.textContent = `${highScoreUsername} - ${highScore}` + 'pts.';
+				latestUser.textContent = `${latestScore} - ${latestScoreUsername}` + 'pts.';
 			  } else {
 				highScoreSpan.textContent = "No score recorded yet.";
 			  }
