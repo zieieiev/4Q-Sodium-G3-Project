@@ -7,7 +7,7 @@
 		<meta name="description" content="Color-Guessing Game">
 		
 		<link rel="stylesheet" href="game.css">
-		<script src="../script.js"></script>
+		<script src="../script.js" defer></script>
 	</head>
 	
     <body>
@@ -44,10 +44,24 @@
 					
 					<div id="leaderboard">
 						<h1>HIGH SCORE:</h1>
-						<h2>EASY: <span id="scoreEasy">0</span></h2><h2>MEDIUM: <span id="scoreMedium">0</span></h2><h2>HARD: <span id="scoreHard">0</span></h2>
+						<h2>EASY: <span id="scoreEasy">0</span></h2>
+						<h2>MEDIUM: <span id="scoreMedium">0</span></h2>
+						<h2>HARD: <span id="scoreHard">0</span></h2>
 					</div>
 				</div>
 			</main>
+			
+			<script>
+			  const highScore = localStorage.getItem("highScore");
+			  const highScoreUsername = localStorage.getItem("highScoreUser");
+
+			  const highScoreSpan = document.getElementById("scoreEasy");
+			  if (highScore && highScoreUsername) {
+				highScoreSpan.textContent = `${highScoreUsername} - ${highScore}` + 'pts.';
+			  } else {
+				highScoreSpan.textContent = "No score recorded yet.";
+			  }
+			</script>
 			
 			<footer>
 			  <p>Copyright &copy; Group 3: OUT OF HUE</p>
