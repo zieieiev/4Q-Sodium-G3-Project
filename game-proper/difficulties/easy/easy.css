@@ -7,9 +7,11 @@ body, html {
 
 body {
   font-family: sans-serif;
-  display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #e5e5f7;
 }
 
@@ -24,6 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   transform: translateX(-50%);
+  margin: 0 auto;
   box-sizing: border-box;
   border-radius: 25px;
 }
@@ -59,18 +62,8 @@ body {
   width: auto;
 }
 
-main {
-  display: flex;
-  padding-top: 120px;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 80px);
-}
-
-main > div {
+main < div {
   background-color: white;
-  padding: 20px 50px 40px 50px;
-  border-radius: 10px;
 }
 
 h1 {
@@ -81,13 +74,6 @@ h1 {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
-
-#game-name {
-  font-size: 30px;
-  color: #8a2be2;
-  font-weight: bold;
-}
-
 .box-container {
   display: grid;
   grid-template-columns: repeat(2, 100px);
@@ -96,7 +82,6 @@ h1 {
   justify-content: center;
   margin-top: 20px;
 }
-
 .color-box {
   width: 100px;
   height: 100px;
@@ -104,9 +89,12 @@ h1 {
   cursor: pointer;
   transition: transform 0.2s;
 }
-
 .color-box:hover {
   transform: scale(1.05);
+}
+	
+#game-name {
+  font-size: 30px;
 }
 
 nav ul {
@@ -134,13 +122,30 @@ nav a:hover {
   border-color: #8a2be2;
 }
 
-/* Button Reset */
-button {
-  all: unset;
-  cursor: pointer;
+main {
+  display: flex;
+  padding-top: 120px;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
 }
 
-/* Footer */
+main > div {
+  background-color: white;
+  padding: 20px 50px 40px 50px;
+  border-radius: 10px;
+}
+
+button {
+  all: unset;
+  cursor: pointer
+}
+
+#game-name {
+  color: #8a2be2;
+  font-weight: bold;
+}
+
 footer {
   background-color: white;
   width: 100%;
@@ -148,7 +153,7 @@ footer {
   text-align: center;
 }
 
-.background-animate, .foreground-animate {
+.background-animate,.foreground-animate {
   width: 100%;
   height: 100vh;
   top: 0;
@@ -157,17 +162,20 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 1;
-  position: fixed;
-  z-index: -1;
 }
 
 .background-animate {
+  position: fixed;
   background-image: url('../../background.png');
+  background-size: cover;
+  z-index: -1;
 }
 
 .foreground-animate {
+  position: fixed;
   background-image: url('../../foreground.png');
-  animation-delay: 0.2s;
+  background-size: cover;
+  z-index: -1;
 }
 
 .content {
@@ -179,6 +187,10 @@ footer {
 
 .background-animate, .foreground-animate, .content {
   animation: bounceUp 1s ease-out forwards;
+}
+
+.foreground-animate {
+  animation-delay: 0.20s;
 }
 
 @keyframes bounceUp {
@@ -202,4 +214,4 @@ footer {
   to {
     opacity: 1;
   }
-}
+} 
