@@ -149,7 +149,7 @@ main {
 }
 
 #leaderboard {
-  min-width: 420px;
+  min-width: 500px;
   min-height: 330px;
   background-color: white;
   transform: translateY(-15px);
