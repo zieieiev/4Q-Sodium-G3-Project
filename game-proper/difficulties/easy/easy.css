@@ -62,10 +62,6 @@ body {
   width: auto;
 }
 
-#game-name {
-  font-size: 30px;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -93,72 +89,102 @@ nav a:hover {
 
 main {
   display: flex;
-  padding-top: 120px;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
 }
 
-#contents {
+#showcase {
   display: flex;
-  gap: 60px;
-  flex-wrap: nowrap;
+  margin-left: 300px;
+  border-radius: 25px;
+}
+
+#divA {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  transform: translateX(-90px);
+}
+
+#divB {
+  position: relative;
+  background-image: url('landing-page/chatbubble.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 340px;
+  height: 191.94px; 
+  padding: 40px 30px;
+  text-align: center;
+  margin: auto;
+  transform: translateX(-75px) translateY(-175px);
+  display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-#difficulty ul {
-  list-style-type: none;
+.chat-content {
+  position: relative;
+  top: 30px;
 }
 
-#difficulty ul li {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  min-width: 250px;
-  margin-bottom: 50px;
+.chat-content h2 {
+  margin-top: 6px;
 }
 
-#difficulty ul li a {
-  color: #8a2be2;
-  font-size: 30px;
-  text-decoration: none;
-  display: block;
+.chat-content p {
+  margin-top: 3px;
+  font-size: 15px;
 }
 
-#difficulty ul li p {
-  font-family: "Monaco", monospace;
-  font-size: 20px;
-  font-style: italic;
-  color: grey;
-  margin-left: 10px;
+a > button[type="button"] {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
 }
 
-#difficulty ul li:nth-child(1) a:hover {
-  color: green;
+a > button[type="button"]:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
-#difficulty ul li:nth-child(2) a:hover {
-  color: orange;
+a > button[type="button"]:hover {
+    background-color: #993399;
 }
 
-#difficulty ul li:nth-child(3) a:hover {
-  color: red;
+a > button[type="button"]:disabled {
+  background-color: #808080;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
 }
 
-#leaderboard {
-  min-width: 420px;
-  min-height: 330px;
-  background-color: white;
-  transform: translateY(-15px);
-  border-radius: 10px;
+form {
+  font-size: 1.2em;
 }
 
-#leaderboard * {
-  transform: translateX(30px) translateY(20px);
-  color: #8a2be2;
+h1 {
+  color: #6a5acd;
+  margin-bottom: 15px;
 }
 
 label {
@@ -166,14 +192,40 @@ label {
   margin-bottom: 5px;
 }
 
+input[type="text"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 275px;
+}
+
 button {
-  all: unset;
+  background-color: #8a2be2;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer
 }
 
-#game-name {
+#colored, #game-name {
   color: #8a2be2;
   font-weight: bold;
+}
+
+#game-name {
+  font-size: 30px;
+}
+
+#divB span {
+  font-size: 20px;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  max-height: 150px;
 }
 
 footer {
@@ -196,14 +248,14 @@ footer {
 
 .background-animate {
   position: fixed;
-  background-image: url('../background.png');
+  background-image: url('background.png');
   background-size: cover;
   z-index: -1;
 }
 
 .foreground-animate {
   position: fixed;
-  background-image: url('../foreground.png');
+  background-image: url('foreground.png');
   background-size: cover;
   z-index: -1;
 }
@@ -245,3 +297,5 @@ footer {
     opacity: 1;
   }
 }
+
+
