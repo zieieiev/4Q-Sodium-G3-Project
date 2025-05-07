@@ -176,7 +176,7 @@ footer {
   background-image: url('../../../foreground.png');
   background-size: cover;
   z-index: -1;
-}e
+}
 
 .content {
   z-index: 1;
