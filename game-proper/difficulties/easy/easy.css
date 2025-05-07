@@ -62,37 +62,6 @@ body {
   width: auto;
 }
 
-main < div {
-  background-color: white;
-}
-
-h1 {
-  margin-bottom: 10px;
-}
-
-#score {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-.box-container {
-  display: grid;
-  grid-template-columns: repeat(2, 100px);
-  grid-template-rows: repeat(2, 100px);
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.color-box {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #333;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.color-box:hover {
-  transform: scale(1.05);
-}
-	
 #game-name {
   font-size: 30px;
 }
@@ -130,10 +99,71 @@ main {
   min-height: calc(100vh - 80px);
 }
 
-main > div {
+#contents {
+  display: flex;
+  gap: 60px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#difficulty ul {
+  list-style-type: none;
+}
+
+#difficulty ul li {
+  display: flex;
+  align-items: center;
   background-color: white;
-  padding: 20px 50px 40px 50px;
   border-radius: 10px;
+  padding: 20px;
+  min-width: 250px;
+  margin-bottom: 50px;
+}
+
+#difficulty ul li a {
+  color: #8a2be2;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+}
+
+#difficulty ul li p {
+  font-family: "Monaco", monospace;
+  font-size: 20px;
+  font-style: italic;
+  color: grey;
+  margin-left: 10px;
+}
+
+#difficulty ul li:nth-child(1) a:hover {
+  color: green;
+}
+
+#difficulty ul li:nth-child(2) a:hover {
+  color: orange;
+}
+
+#difficulty ul li:nth-child(3) a:hover {
+  color: red;
+}
+
+#leaderboard {
+  min-width: 420px;
+  min-height: 330px;
+  background-color: white;
+  transform: translateY(-15px);
+  border-radius: 10px;
+}
+
+#leaderboard * {
+  transform: translateX(30px) translateY(20px);
+  color: #8a2be2;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 button {
@@ -166,14 +196,14 @@ footer {
 
 .background-animate {
   position: fixed;
-  background-image: url('../../background.png');
+  background-image: url('../background.png');
   background-size: cover;
   z-index: -1;
 }
 
 .foreground-animate {
   position: fixed;
-  background-image: url('../../foreground.png');
+  background-image: url('../foreground.png');
   background-size: cover;
   z-index: -1;
 }
