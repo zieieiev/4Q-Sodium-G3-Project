@@ -34,14 +34,22 @@ window.onload = function() {
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
         colorValues = [r, g, b];
-		return colorValues;
+	return colorValues;
     }
 	
 	function getDifferentColor(base, offset) {
         let modificationValue = Math.floor(Math.random()*3);
-		const modified = [base[0], base[1], base[2]];
-		modified[modificationValue] = Math.min(255, modified[modificationValue] + offset);
-		return modified;
+	const modified = [base[0], base[1], base[2]];
+		
+	if (base[modificationValue] + offset <= 255) {
+		modified[modificationValue] = base[modificationValue] + offset;
+	} else if (base[modificationValue] - offset >= 0) {
+		modified[modificationValue] = base[modificationValue] - offset;
+	} else {
+		modified[modificationValue] = (base[modificationValue] + offset > 255) ? 255 : 0;
+	}
+		
+	return modified;
     }
 
 function createGame() {
