@@ -58,7 +58,9 @@
 			  const latestScore = localStorage.getItem("currentUsername");
 			  const latestScoreUsername = localStorage.getItem("currentScore");
 
-			  const highScoreSpan = document.getElementById("scoreEasy");
+			  const highScoreSpanEasy = document.getElementById("scoreEasy");
+			  const highScoreSpanMedium = document.getElementById("scoreMedium");
+			  const highScoreSpanHard = document.getElementById("scoreHard");
 			  const currentPlayerSpan = document.getElementById("latestUser");
 			  
 			  if (highScore && highScoreUsername) {
