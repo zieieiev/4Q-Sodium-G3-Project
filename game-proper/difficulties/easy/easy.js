@@ -75,7 +75,7 @@ function createGame() {
 				}
 
 				alert("You lost! Redirecting back to game page...");
-				window.location.href = "../../game.html";
+				window.location.href = "../../../game.html";
 				return;
 			}
 			scoreDisplay.textContent = `Score: ${score}`;
