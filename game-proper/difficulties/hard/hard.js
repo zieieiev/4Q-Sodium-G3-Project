@@ -58,9 +58,9 @@ function createGame() {
 	const baseColor = getRandomColor();
 	const differentColor = getDifferentColor(baseColor, 150); 
 	
-	const differentIndex = Math.floor(Math.random() * 4);
+	const differentIndex = Math.floor(Math.random() * 16);
 
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < 16; i++) {
 		const box = document.createElement("div");
 		box.classList.add("color-box");
 		const color = (i === differentIndex ? differentColor : baseColor);
