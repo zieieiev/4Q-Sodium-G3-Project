@@ -62,6 +62,41 @@ body {
   width: auto;
 }
 
+main < div {
+  background-color: white;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+#score {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.color-box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.color-box:hover {
+  transform: scale(1.05);
+}
+	
+#game-name {
+  font-size: 30px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -89,143 +124,26 @@ nav a:hover {
 
 main {
   display: flex;
+  padding-top: 120px;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
 }
 
-#showcase {
-  display: flex;
-  margin-left: 300px;
-  border-radius: 25px;
-}
-
-#divA {
+main > div {
   background-color: white;
-  padding: 20px;
+  padding: 20px 50px 40px 50px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 300px;
-  margin: auto;
-  transform: translateX(-90px);
-}
-
-#divB {
-  position: relative;
-  background-image: url('landing-page/chatbubble.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 340px;
-  height: 191.94px; 
-  padding: 40px 30px;
-  text-align: center;
-  margin: auto;
-  transform: translateX(-75px) translateY(-175px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.chat-content {
-  position: relative;
-  top: 30px;
-}
-
-.chat-content h2 {
-  margin-top: 6px;
-}
-
-.chat-content p {
-  margin-top: 3px;
-  font-size: 15px;
-}
-
-a > button[type="button"] {
-    background-color: #8a2be2;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-}
-
-a > button[type="button"]:after {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-left: 20px solid white;
-    border-bottom: 10px solid transparent;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-
-a > button[type="button"]:hover {
-    background-color: #993399;
-}
-
-a > button[type="button"]:disabled {
-  background-color: #808080;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: not-allowed;
-}
-
-form {
-  font-size: 1.2em;
-}
-
-h1 {
-  color: #6a5acd;
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"] {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 275px;
 }
 
 button {
-  background-color: #8a2be2;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
+  all: unset;
   cursor: pointer
 }
 
-#colored, #game-name {
+#game-name {
   color: #8a2be2;
   font-weight: bold;
-}
-
-#game-name {
-  font-size: 30px;
-}
-
-#divB span {
-  font-size: 20px;
-}
-
-section {
-  margin: 0;
-  padding: 0;
-  max-height: 150px;
 }
 
 footer {
@@ -248,14 +166,14 @@ footer {
 
 .background-animate {
   position: fixed;
-  background-image: url('background.png');
+  background-image: url('../../background.png');
   background-size: cover;
   z-index: -1;
 }
 
 .foreground-animate {
   position: fixed;
-  background-image: url('foreground.png');
+  background-image: url('../../foreground.png');
   background-size: cover;
   z-index: -1;
 }
@@ -296,6 +214,4 @@ footer {
   to {
     opacity: 1;
   }
-}
-
-
+} 
