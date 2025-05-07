@@ -22,27 +22,27 @@ window.onload = function() {
             playerName.innerHTML = storedUsername;
         }
     }
-}
 
-const boxContainer = document.getElementById("boxContainer");
-const scoreDisplay = document.getElementById("score");
-let score = 0;
-let colorValues = [];
 
-function getRandomColor() {
-	const r = Math.floor(Math.random() * 255);
-	const g = Math.floor(Math.random() * 255);
-	const b = Math.floor(Math.random() * 255);
-	colorValues = [r, g, b];
-	return colorValues;
-}
+    const boxContainer = document.getElementById("boxContainer");
+    const scoreDisplay = document.getElementById("score");
+    let score = 0;
+	let colorValues = [];
 
-function getDifferentColor(base, offset) {
-	let modificationValue = Math.floor(Math.random()*3);
-	const modified = [base[0], base[1], base[2]];
-	modified[modificationValue] = Math.min(255, modified[modificationValue] + offset);
-	return modified;
-}
+    function getRandomColor() {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        colorValues = [r, g, b];
+		return colorValues;
+    }
+	
+	function getDifferentColor(base, offset) {
+        let modificationValue = Math.floor(Math.random()*3);
+		const modified = [base[0], base[1], base[2]];
+		modified[modificationValue] = Math.min(255, modified[modificationValue] + offset);
+		return modified;
+    }
 
 function createGame() {
 	boxContainer.innerHTML = "";
@@ -64,14 +64,14 @@ function createGame() {
 			} else {
 				localStorage.setItem('currentUsername', currentUsername);
 				localStorage.setItem('currentScore', score);
-				let highScore = parseInt(localStorage.getItem('highScoreEasy') || '0');
-				let highScoreUser = localStorage.getItem('highScoreUserEasy') || '';
+				let highScore = parseInt(localStorage.getItem('highScore') || '0');
+				let highScoreUser = localStorage.getItem('highScoreUser') || '';
 
 				if (score > highScore) {
 					highScore = score;
 					highScoreUser = currentUsername;
-					localStorage.setItem('highScoreEasy', highScore);
-					localStorage.setItem('highScoreUserEasy', highScoreUser);
+					localStorage.setItem('highScore', highScore);
+					localStorage.setItem('highScoreUser', highScoreUser);
 				}
 
 				alert("You lost! Redirecting back to game page...");
@@ -83,7 +83,8 @@ function createGame() {
 		});
 
 		boxContainer.appendChild(box);
-        }
+	}
     }
 
-createGame();
+    createGame();
+};
