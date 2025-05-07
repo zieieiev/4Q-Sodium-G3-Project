@@ -76,9 +76,9 @@ h1 {
 }
 .box-container {
   display: grid;
-  grid-template-columns: repeat(2, 100px);
-  grid-template-rows: repeat(2, 100px);
-  gap: 20px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 10px;
   justify-content: center;
   margin-top: 20px;
 }
@@ -176,7 +176,7 @@ footer {
   background-image: url('../../../foreground.png');
   background-size: cover;
   z-index: -1;
-}
+}e
 
 .content {
   z-index: 1;
