@@ -67,12 +67,31 @@
 			  const highScoreSpanHard = document.getElementById("scoreHard");
 			  const currentPlayerSpan = document.getElementById("latestUser");
 			  
-			  if (highScore && highScoreUsername) {
-				highScoreSpan.textContent = `${highScoreUsername} - ${highScore}` + 'pts.';
+			  if (highScoreEasy && highScoreUsernameEasy) {
+				highScoreSpanEasy.textContent = `${highScoreUsernameEasy} - ${highScoreEasy}` + 'pts.';
+			  } else {
+				highScoreSpanEasy.textContent = "No score recorded yet.";
+			  }
+
+			  if (highScoreMedium && highScoreUsernameMedium) {
+				highScoreSpanMedium.textContent = `${highScoreUsernameMedium} - ${highScoreMedium}` + 'pts.';
+			  } else {
+				highScoreSpanMedium.textContent = "No score recorded yet.";
+			  }
+
+			  if (highScoreHard && highScoreUsernameHard) {
+				highScoreSpan.textContent = `${highScoreUsernameHard} - ${highScoreHard}` + 'pts.';
+				
+			  } else {
+				highScoreSpanHard.textContent = "No score recorded yet.";
+			  }
+
+			  if (latestScore && latestScoreUsername) {
 				latestUser.textContent = `${latestScore} - ${latestScoreUsername}` + 'pts.';
 			  } else {
-				highScoreSpan.textContent = "No score recorded yet.";
+				highScoreSpanEasy.textContent = "No score recorded yet.";
 			  }
+		
 			</script>
 			
 			<footer>
