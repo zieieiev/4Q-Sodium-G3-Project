@@ -64,14 +64,14 @@ function createGame() {
 			} else {
 				localStorage.setItem('currentUsername', currentUsername);
 				localStorage.setItem('currentScore', score);
-				let highScore = parseInt(localStorage.getItem('highScore') || '0');
-				let highScoreUser = localStorage.getItem('highScoreUser') || '';
+				let highScore = parseInt(localStorage.getItem('highScoreEasy') || '0');
+				let highScoreUser = localStorage.getItem('highScoreUserEasy') || '';
 
 				if (score > highScore) {
 					highScore = score;
 					highScoreUser = currentUsername;
-					localStorage.setItem('highScore', highScore);
-					localStorage.setItem('highScoreUser', highScoreUser);
+					localStorage.setItem('highScoreEasy', highScore);
+					localStorage.setItem('highScoreUserEasy', highScoreUser);
 				}
 
 				alert("You lost! Redirecting back to game page...");
