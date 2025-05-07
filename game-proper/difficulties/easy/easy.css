@@ -166,17 +166,17 @@ footer {
 
 .background-animate {
   position: fixed;
-  background-image: url('../../background.png');
+  background-image: url('landing-page/background.png');
   background-size: cover;
   z-index: -1;
 }
 
 .foreground-animate {
   position: fixed;
-  background-image: url('../../foreground.png');
+  background-image: url('landing-page/foreground.png');
   background-size: cover;
   z-index: -1;
-}
+}e
 
 .content {
   z-index: 1;
