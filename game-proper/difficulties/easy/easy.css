@@ -217,5 +217,10 @@ footer {
 }
 
 div {
-  color: #301934;
+  color: #702963;
 }
+
+.color-box {
+  border-radius: 10px;
+}
+
