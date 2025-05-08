@@ -57,7 +57,7 @@ function createGame() {
 	boxContainer.innerHTML = "";
 	
 	const baseColor = getRandomColor();
-	const differentColor = getDifferentColor(baseColor, 75); 
+	const differentColor = getDifferentColor(baseColor, 100); 
 	
 	const differentIndex = Math.floor(Math.random() * 9);
 
@@ -69,7 +69,7 @@ function createGame() {
 
 		box.addEventListener("click", () => {
 			if (i === differentIndex) {
-				score++;
+				score = score + 1.5;
 			} else {
 				localStorage.setItem('currentUsername', currentUsername);
 				localStorage.setItem('currentScore', score);
