@@ -56,7 +56,7 @@ function createGame() {
 	boxContainer.innerHTML = "";
 	
 	const baseColor = getRandomColor();
-	const differentColor = getDifferentColor(baseColor, 25); 
+	const differentColor = getDifferentColor(baseColor, 150); 
 	
 	const differentIndex = Math.floor(Math.random() * 4);
 
