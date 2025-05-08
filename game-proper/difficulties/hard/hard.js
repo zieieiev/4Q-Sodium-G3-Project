@@ -68,7 +68,7 @@ function createGame() {
 
 		box.addEventListener("click", () => {
 			if (i === differentIndex) {
-				score++;
+				score = score + 2;
 			} else {
 				localStorage.setItem('currentUsername', currentUsername);
 				localStorage.setItem('currentScore', score);
