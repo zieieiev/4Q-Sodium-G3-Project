@@ -97,8 +97,3 @@ function createGame() {
 
     createGame();
 };
-
-const difficulty = localStorage.getItem('difficulty') || 'easy';
-document.body.classList.add(`${difficulty}-mode`);
-
-
