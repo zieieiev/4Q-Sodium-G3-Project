@@ -216,4 +216,6 @@ footer {
   }
 }
 
-
+.boxcontainer {
+	border-radius: 10px;
+}
